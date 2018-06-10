@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Star Ship Game</title>
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/materialize.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.6.1.css">
+</head>
+
+<body>
+    <script type="text/x-handlebars">
+        <div class="logo">
+         <img src="img/starwars.jpg">            
+        </div>
+        <div class="container" style="margin-top:5%">
+            {{outlet}}
+        </div>
+      </script>
+    <script type="text/x-handlebars" data-template-name="index">
+        <div class="col s12 start">
+        <button {{action startGame}} class="btn btn-primary">{{buttonText}}</button>
+        </div>
+        <div class="row">
+
+            <div class="card col s4">
+            {{#if winner}}
+             <div class="chip" style='{{winner.badge1}}'>
+                <img src="img/{{winner.chip}}.jpg">
+                Win player 1
+             </div>
+            {{/if}}
+    
+            <div class="player"><strong>Player 1</strong> | Win: <strong>{{userWinCount}}</strong></div>
+            <div class="card-image waves-effect waves-block waves-light">
+             <img class="activator" src="img/player1.jpg">
+            </div>
+             <div class="card-content">
+                <p class="playerName">{{currentUser.name}}</p>
+                <p class="playerSkill">Mass: <strong>{{currentUser.mass}}</strong></p>
+             </div>
+            </div>
+            <div class="col s4">
+            </div>  
+
+            <div class="card col s4">
+            {{#if winner}}
+             <div class="chip"  style='{{winner.badge2}}'>
+                <img src="img/{{winner.chip}}.jpg">
+                Win player 2
+             </div>
+            {{/if}}
+                <div class="player"><strong>Player 2</strong> | Win: <strong>{{startShipWinCount}}</strong></div>
+                <div class="card-image waves-effect waves-block waves-light">
+                    <img class="activator" src="img/player2.jpg">
+                </div>
+                 <div class="card-content">
+                    <p class="playerName">{{currentStartship.name}}</p>
+                    <p class="playerSkill">Crew: <strong>{{currentStartship.crew}}</strong></p>
+                 </div>   
+            </div>
+        </div>
+        {{#if winner}}
+            <div class="panel panel-primary">
+                <div class="alert alert-{{winner.errorType}}" role="alert">
+                    {{winner.message}}
+                </div>
+                <div class="panel-heading">Winner Details</div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-12 col-lg-12 col-sm-12 ">
+                            <table class="table table-user-information">
+                                <tbody>
+                                    {{#each-in winner.user as |key|}}
+                                    <tr class="">
+                                        <td>{{key}} </td>
+                                        <td>{{format-value key winner.user}}</td>
+                                    </tr>
+                                    {{/each-in}}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        {{/if}}
+        
+        {{#if loadingBar}}
+            <div class="loading-conatiner">
+                <img src="img/flight-loader-dribbble.gif" alt="">
+            </div>
+        {{/if}}
+
+    <div id="qunit"></div>
+    <div id="qunit-features"></div>
+
+
+
+    </script>
+    <script src="js/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/qunit/qunit-2.6.1.js"></script>
+    <script src="js/ember/2.18.2/ember-template-compiler.js"></script>
+    <script src="js/ember/2.18.2/ember.js"></script>
+    <script src="js/materialize/materialize.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/tests.js"></script>
+</body>
+
+</html>

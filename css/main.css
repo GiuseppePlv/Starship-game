@@ -1,0 +1,131 @@
+div#ember157 {
+    min-height: 100vh;
+    background: url(../img/background.jpg);
+}
+.chip {
+    position: absolute;
+    top: -45px;
+    font-weight: 900;
+    font-size: 15px;
+}
+.logo{
+    text-align: center;
+    padding-top: 20px;
+}
+.player {
+    background:#fff;
+    padding: 5px 20px;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+p.playerName {
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 900;
+    color: #010101;
+    text-decoration: underline;
+    text-underline-position: under;
+    width: 100%;
+}
+p.playerSkill {
+    float: right;
+    font-size: 21px;
+    letter-spacing: 1px;
+    font-weight: 500;
+    font-style: italic;
+}
+p.playerSkill strong {
+    font-size: 35px;
+    color: #ffdd00;
+    font-weight: 900;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #0d0d0d;
+}
+.alert.alert-info {
+    font-size: 30px;
+    text-transform: uppercase;
+    text-align: center;
+    background: #010101;
+    font-weight: 900;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #0d0d0d;
+    color: #ffdd00;
+}
+.panel.panel-primary {
+    background: #fff;
+    padding: 10px;
+}
+.start {
+    position: relative;
+    top: 150px;
+}
+.start button {
+    background: #010101;
+    color: black;
+    -webkit-text-fill-color: #010101;
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: #fcec23;
+    font-size: 40px;
+    font-weight: 800;
+}
+.start button:hover {
+    background: transparent;
+    -webkit-text-fill-color: #ffe40e;
+    transition:0.4s;
+}
+.card.col.s6 {
+    background: transparent;
+    box-shadow: none;
+}
+.col.s12{
+    text-align: center;
+    margin: 10px;
+}
+.loading-conatiner {
+    position: absolute;
+    top: 0;
+    z-index: 8;
+    background: #7fb2d278;
+    text-align: center;
+    opacity: 0.9;
+    height: 100%;
+    width: 100%;
+    left: 0;
+}
+
+.loading-conatiner img {
+    width: 88%;
+    height: 100vh;
+}
+.table-user-information > tbody > tr {
+    border-top: 1px solid rgb(221, 221, 221);
+}
+
+.table-user-information > tbody > tr:first-child {
+    border-top: 0;
+}
+
+
+.table-user-information > tbody > tr > td {
+    border-top: 0;
+    
+}
+.table-user-information > tbody > tr > td:first-child{
+    text-transform: capitalize;
+    font-size: 16px;
+    font-weight: 700;
+}
+.table-user-information > tbody > tr > td:last-child{
+    word-break: break-all;
+}
+.toppad
+{margin-top:20px;
+}
+.waves-block {
+    display: block;
+    max-height: 200px;
+}
+.card.col.s4 {
+    box-shadow: none;
+}
+
