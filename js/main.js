@@ -27,8 +27,21 @@ App.IndexController = Ember.Controller.extend({
         $.ajax('https://swapi.co/api/people/.json?page=' + that.get('peoplePageNumer'))
             .then(function (response) {
                 that.set("userlist", response.results)
+                // fix unknown mass
+                var fixMass = response.results;
+                Array.prototype.removeValue = function(name, value){
+                   var array = $.map(this, function(v,i){
+                      return v[name] === value ? null : v;
+                   });
+                   this.length = 0; 
+                   this.push.apply(this, array);
+                }
+                fixMass.removeValue('mass', 'unknown');
+
                 var randomNumber = Math.floor(Math.random() * response.results.length);
                 that.set('currentUser', response.results[randomNumber])
+
+
                 var nextPage = response.count - (that.get('peoplePageNumer') * 10);
                 if (nextPage <= 10) {
                     that.set('peoplePageNumer', 1)
@@ -43,6 +56,17 @@ App.IndexController = Ember.Controller.extend({
         var that = this;
         $.ajax('https://swapi.co/api/starships/.json?page=' + that.get('startShipPageNumer')).then(function (response) {
             that.set("startshipList", response.results);
+            // fix unknown crew
+            var fixCrew = response.results;
+            Array.prototype.removeValue = function(name, value){
+               var array = $.map(this, function(v,i){
+                  return v[name] === value ? null : v;
+               });
+               this.length = 0; 
+               this.push.apply(this, array);
+            }
+            fixCrew.removeValue('crew', 'unknown');
+
             var randomNumber = Math.floor(Math.random() * response.results.length);
             that.set('currentStartship', response.results[randomNumber])
             var nextPage = response.count - (that.get('startShipPageNumer') * 10);
