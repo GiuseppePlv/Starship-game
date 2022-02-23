@@ -81,7 +81,7 @@ p.playerSkill strong {
     text-align: center;
     margin: 10px;
 }
-.loading-conatiner {
+.loading-container {
     position: absolute;
     top: 0;
     z-index: 8;
@@ -93,7 +93,7 @@ p.playerSkill strong {
     left: 0;
 }
 
-.loading-conatiner img {
+.loading-container img {
     width: 88%;
     height: 100vh;
 }

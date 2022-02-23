@@ -40,8 +40,8 @@
              <img class="activator" src="img/player1.jpg">
             </div>
              <div class="card-content">
-                <p class="playerName">{{currentUser.name}}</p>
-                <p class="playerSkill">Mass: <strong>{{currentUser.mass}}</strong></p>
+                <p class="playerName">{{userlist.name}}</p>
+                <p class="playerSkill">Mass: <strong>{{userlist.mass}}</strong></p>
              </div>
             </div>
             <div class="col s4">
@@ -59,8 +59,8 @@
                     <img class="activator" src="img/player2.jpg">
                 </div>
                  <div class="card-content">
-                    <p class="playerName">{{currentStartship.name}}</p>
-                    <p class="playerSkill">Crew: <strong>{{currentStartship.crew}}</strong></p>
+                    <p class="playerName">{{startshipList.name}}</p>
+                    <p class="playerSkill">Crew: <strong>{{startshipList.crew}}</strong></p>
                  </div>   
             </div>
         </div>
@@ -90,7 +90,7 @@
         {{/if}}
         
         {{#if loadingBar}}
-            <div class="loading-conatiner">
+            <div class="loading-container">
                 <img src="img/flight-loader-dribbble.gif" alt="">
             </div>
         {{/if}}
